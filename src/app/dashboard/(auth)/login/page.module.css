@@ -1,0 +1,53 @@
+.google{
+    display: flex;
+    padding: 10px;
+    border: 3px solid rgb(255, 236, 236);
+    background-color: white;
+    color: #111;
+    cursor: pointer;
+    width: 300px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.btn{
+    font-size: 12px;
+}
+.googleImg{
+    position: absolute;
+    left: 10px;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.form{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.input{
+    padding: 20px;
+    background-color: transparent;
+    border: 3px solid #bbb;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #fff;
+}
+.registerBtn{
+    width: 300px;
+    background-color: #53c28b;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+}
