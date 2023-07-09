@@ -1,6 +1,7 @@
 "use client";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import useSWR from "swr";
 import styles from "./page.module.css";
 import Image from "next/image";
@@ -18,12 +19,18 @@ const Dashboard = () => {
     fetcher
   );
 
+  useEffect(() => {
+    if (session.status === "unauthenticated") {
+      router.push("/dashboard/login");
+    }
+  }, [session.status, router]);
+
   if (session.status === "loading") {
     return <div>loading...</div>;
   }
-  if (session.status === "unauthenticated") {
-    router?.push("/dashboard/login");
-  }
+  // if (session.status === "unauthenticated") {
+  //   router.push("/dashboard/login");
+  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
