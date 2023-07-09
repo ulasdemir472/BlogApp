@@ -4,12 +4,9 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 async function getData(id) {
-  const res = await fetch(
-    `blog-next-cytr3ab3i-ulasdemir472.vercel.app/api/blogPosts/${id}`,
-    {
-      cache: "no-store", //sürekli değişen veriler için
-    }
-  );
+  const res = await fetch(`http://localhost:3000/api/blogPosts/${id}`, {
+    cache: "no-store", //sürekli değişen veriler için
+  });
 
   if (!res.ok) {
     return notFound();

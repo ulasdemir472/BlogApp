@@ -1,22 +1,14 @@
-import React from "react";
 import styles from "@/app/page.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-async function getData() {
-  const res = await fetch(
-    `blog-next-cytr3ab3i-ulasdemir472.vercel.app/api/blogPosts`,
-    {
-      cache: "no-store", //sürekli değişen veriler için
-    }
-  );
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
+const getData = async () => {
+  const res = await fetch("http://localhost:3000/api/blogPosts", {
+    cache: "no-store", //sürekli değişen veriler için
+  });
 
   return res.json();
-}
+};
 
 const Blog = async () => {
   const data = await getData();
