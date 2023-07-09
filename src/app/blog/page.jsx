@@ -4,9 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function getData() {
-  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/blogPosts`, {
-    cache: "no-store", //sürekli değişen veriler için
-  });
+  const res = await fetch(
+    `blog-next-cytr3ab3i-ulasdemir472.vercel.app/api/blogPosts`,
+    {
+      cache: "no-store", //sürekli değişen veriler için
+    }
+  );
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
