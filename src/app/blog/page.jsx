@@ -1,11 +1,10 @@
-"use client";
 import React from "react";
 import styles from "@/app/page.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
 async function getData() {
-  const res = await fetch("/api/blogPosts", {
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/blogPosts`, {
     cache: "no-store", //sürekli değişen veriler için
   });
 

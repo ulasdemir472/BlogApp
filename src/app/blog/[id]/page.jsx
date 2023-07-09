@@ -1,11 +1,10 @@
-"use client";
 import React from "react";
 import styles from "@/app/page.module.css";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
 async function getData(id) {
-  const res = await fetch(`/api/blogPosts/${id}`, {
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/blogPosts/${id}`, {
     cache: "no-store", //sürekli değişen veriler için
   });
 
@@ -17,13 +16,13 @@ async function getData(id) {
 }
 
 //use client ile kullanılamaz
-/*export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }) {
   const post = await getData(params.id);
   return {
     title: post.title,
     description: post.desc,
   };
-}*/
+}
 
 const BlogPost = async ({ params }) => {
   const data = await getData(params.id);
